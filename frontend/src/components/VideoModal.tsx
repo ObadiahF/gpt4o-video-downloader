@@ -1,6 +1,5 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
-import { getVideoUrl } from "../api";
 
 interface VideoModalProps {
   show: boolean;

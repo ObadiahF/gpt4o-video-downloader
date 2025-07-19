@@ -1,13 +1,12 @@
-import { API_BASE_URL } from './constants';
 
 export async function fetchQueue() {
-  const res = await fetch(`${API_BASE_URL}/queue`);
+  const res = await fetch('api/queue');
   if (!res.ok) throw new Error('Failed to fetch queue');
   return await res.json();
 }
 
 export async function fetchHistory() {
-  const res = await fetch(`${API_BASE_URL}/history`);
+  const res = await fetch('api/history');
   if (!res.ok) throw new Error('Failed to fetch history');
   return await res.json();
 }
@@ -18,7 +17,7 @@ export async function addDownload(data: {
   fileName?: string;
   source?: string;
 }) {
-  const res = await fetch(`${API_BASE_URL}/download`, {
+  const res = await fetch('api/download', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data),
@@ -28,17 +27,17 @@ export async function addDownload(data: {
 }
 
 export async function cancelQueueItem(id: string) {
-  const res = await fetch(`${API_BASE_URL}/queue/${id}`, { method: 'DELETE' });
+  const res = await fetch(`api/queue/${id}`, { method: 'DELETE' });
   if (!res.ok) throw new Error('Failed to cancel queue item');
 }
 
 export async function deleteHistoryItem(id: string, deleteFile: boolean): Promise<void> {
-  const res = await fetch(`${API_BASE_URL}/history/${id}?deleteFile=${deleteFile}`, {
+  const res = await fetch(`api/history/${id}?deleteFile=${deleteFile}`, {
     method: "DELETE",
   });
   if (!res.ok) throw new Error("Failed to delete history item");
 }
 
 export function getVideoUrl(videoId: string): string {
-  return `${API_BASE_URL}/video/${videoId}`;
+  return `api/video/${videoId}`;
 }
