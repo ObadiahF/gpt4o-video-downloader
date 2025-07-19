@@ -7,7 +7,11 @@ import { exec } from 'child_process';
 import { promisify } from 'util';
 
 const execAsync = promisify(exec);
-const downloadPath = path.join(__dirname, '../../../data/downloads');
+
+// Only this directory is externally mounted in Docker
+const downloadPath = process.env.DOWNLOAD_DIR || '/app/data/downloads';
+
+// Keep temp internal
 const tempRoot = path.join(__dirname, '../../../data/temp');
 
 export async function handleSegment(item: DownloadItem): Promise<void> {
@@ -52,7 +56,6 @@ export async function handleSegment(item: DownloadItem): Promise<void> {
       log('download', `✅ Segment ${i} saved: ${segmentFileName} (${(response.data.byteLength / 1e6).toFixed(2)} MB)`);
 
       i++;
-      // await delay(250); // optional throttle
     }
 
     if (segmentFiles.length === 0) {
@@ -68,7 +71,6 @@ export async function handleSegment(item: DownloadItem): Promise<void> {
     await execAsync(ffmpegCmd, { cwd: tempDir });
 
     log('download', `✅ Final video created: ${finalFileName}`);
-
   } catch (err: any) {
     log('download', `❌ Segment download failed: ${item.fileName} - ${err.message}`);
     throw err;

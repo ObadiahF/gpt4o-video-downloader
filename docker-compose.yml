@@ -8,5 +8,5 @@ services:
       - "5173:80"         # Nginx (frontend)
       - "3000:3000"       # Optional: backend if needed for debugging
     volumes:
-      - ./data:/app/data  # Persist downloads, logs, queue/history
+      - ./data:/app/data  # Persist downloads
     restart: unless-stopped

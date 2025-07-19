@@ -3,14 +3,14 @@ import { log } from '../../utils/Logger';
 import path from 'path';
 import { exec } from 'child_process';
 import { promisify } from 'util';
+import { DOWNLOAD_DIR } from '../../config';
 
 const execAsync = promisify(exec);
-const downloadPath = path.join(__dirname, '../../../data/downloads');
 
 export async function handleM3U8(item: DownloadItem): Promise<void> {
   // Remove any existing extension from fileName (like .mp4 or .mkv)
   const baseName = item.fileName.replace(/\.[^/.]+$/, '');
-  const outputTemplate = path.join(downloadPath, `${baseName}.%(ext)s`);
+  const outputTemplate = path.join(DOWNLOAD_DIR, `${baseName}.%(ext)s`);
 
   log('download', `📺 Starting m3u8 download with yt-dlp: ${item.url}`);
   log('download', `📦 Output template: ${outputTemplate}`);

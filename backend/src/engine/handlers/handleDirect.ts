@@ -3,8 +3,7 @@ import { log } from '../../utils/Logger';
 import fs from 'fs';
 import path from 'path';
 import axios from 'axios';
-
-const downloadPath = path.join(__dirname, '../../../data/downloads');
+import { DOWNLOAD_DIR } from '../../config';
 
 const mimeToExt: Record<string, string> = {
   'video/mp4': '.mp4',
@@ -27,7 +26,7 @@ export async function handleDirect(item: DownloadItem): Promise<void> {
     fileName += ext;
   }
 
-  const outPath = path.join(downloadPath, fileName);
+  const outPath = path.join(DOWNLOAD_DIR, fileName);
 
   const totalSize = parseInt(response.headers['content-length'] || '0', 10);
   let downloaded = 0;
