@@ -1,0 +1,13 @@
+# Ignore node modules
+**/node_modules
+**/dist
+
+# Ignore logs and data
+*.log
+data/
+
+# Ignore system and editor files
+.DS_Store
+.env
+.vscode
+.idea

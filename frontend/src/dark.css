@@ -1,0 +1,194 @@
+body {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+.list-group-item {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border-color: #333;
+}
+
+.form-control,
+.form-select {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.alert {
+    background-color: #2a2a2a;
+    color: #f1f1f1;
+    border: 1px solid #444;
+}
+
+.text-muted {
+    color: #b0b0b0; /* Softer gray for dark mode */
+}
+
+/* Textbox focus styles */
+.form-control:focus,
+.form-select:focus {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+  border-color: #0d6efd; /* Optional: Bootstrap blue */
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25); /* Optional glow */
+}
+
+/* Placeholder text color */
+::placeholder {
+  color: #ffffff !important; /* Softer gray for dark mode */
+  opacity: 1; /* Override default opacity */
+}
+
+/* Support Firefox */
+::-moz-placeholder {
+  color: #fffdfd !important;
+  opacity: 1;
+}
+
+/* Support Internet Explorer */
+:-ms-input-placeholder {
+  color: #ffffff !important;
+}
+
+::-ms-input-placeholder {
+  color: #ffffff !important;
+}
+
+/* General card styling */
+.list-group-item {
+  background-color: #1e1e1e !important;
+  color: #ddd;
+  border-color: #333;
+}
+
+/* Expand/collapse button */
+.btn-outline-secondary {
+  color: #bbb;
+  border-color: #555;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #333;
+  border-color: #777;
+}
+
+/* Badge styling for status */
+.badge.bg-secondary {
+  background-color: #444;
+  color: #ccc;
+}
+
+/* Details section */
+.list-group-item .border-top {
+  border-top: 1px solid #333 !important;
+}
+
+.list-group-item a {
+  color: #66b2ff;
+  text-decoration: underline;
+}
+
+.list-group-item a:hover {
+  color: #90cfff;
+}
+
+/* Optional: smooth expand effect */
+.list-group-item .mt-3 {
+  transition: all 0.2s ease-in-out;
+}
+/* Card background and text */
+.list-group-item {
+  background-color: #2a2a2e !important;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+/* Expand/Collapse button */
+.btn-outline-secondary {
+  color: #d0d0d0;
+  border-color: #666;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #444;
+  border-color: #888;
+}
+
+/* Status badge */
+.badge.bg-secondary {
+  background-color: #555;
+  color: #fafafa;
+}
+
+/* Divider line */
+.list-group-item .border-top {
+  border-top: 1px solid #555 !important;
+}
+
+/* Link styles */
+.list-group-item a {
+  color: #66b2ff;
+  text-decoration: underline;
+}
+
+.list-group-item a:hover {
+  color: #99ccff;
+}
+
+/* Retry / date info */
+.list-group-item .small {
+  color: #bbbbbb;
+}
+/* Brighter background and true white text */
+.list-group-item {
+    background-color: #1e1e1e !important;
+    color: #ffffff !important;
+    border-color: #333 !important;
+}
+
+/* Expand/Collapse button */
+.btn-outline-secondary {
+    color: #ffffff !important;
+    border-color: #555 !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+    color: #ffffff !important;
+    background-color: #444 !important;
+    border-color: #777 !important;
+}
+
+/* Status badge */
+.badge.bg-secondary {
+    background-color: #666 !important;
+    color: #ffffff !important;
+}
+
+/* Divider and extra info */
+.list-group-item .border-top {
+    border-top: 1px solid #444 !important;
+}
+
+.list-group-item .small {
+    color: #dddddd !important;
+}
+
+/* Links */
+.list-group-item a {
+    color: #4da6ff !important;
+    text-decoration: underline;
+}
+
+.list-group-item a:hover {
+    color: #80cfff !important;
+}
